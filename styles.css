@@ -37,6 +37,20 @@ h2 {
     font-weight: normal;
 }
 
+a {
+    color: #49aa26;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3dd705;
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
 header {
     background: #2d4a22;
     padding: 2rem 0 10rem;
