@@ -1,6 +1,4 @@
-<h1 align="center" style="background:#2d4a22;">
-    <img alt="dev.finance$ logo" src="assets/logo.svg">
-</h1>
+<h1 align="center">dev.finance$</h1>
 
 <p align="center">
     <a href="#project">Project</a>&nbsp;&nbsp;|&nbsp;&nbsp;
