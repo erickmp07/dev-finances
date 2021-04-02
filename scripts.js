@@ -143,3 +143,63 @@ const utils = {
         return signal + value;
     }
 };
+
+const form = {
+    description: document.querySelector('input#description'),
+    value: document.querySelector('input#value'),
+    date: document.querySelector('input#date'),
+
+    getValues() {
+        return {
+            description: form.description.value,
+            value: form.value.value,
+            date: form.date.value 
+        };
+    },
+
+    validateFields() {
+        const { description, value, date } = form.getValues();
+
+        if (description.trim() === "" || 
+            value.trim() === "" || 
+            date.trim() === "") {
+            throw new Error("Please, fill all the fields.");
+        }
+    },
+
+    formatValues() {
+        let { description, value, date } = form.getValues();
+
+        value = utils.formatValue(value);
+
+        date = utils.formatDate(date);
+
+        return {
+            description,
+            value,
+            date
+        };
+    },
+
+    clearFields() {
+        form.description.value = "";
+        form.value.value = "";
+        form.date.value = "";
+    },
+
+    submit(event) {
+        event.preventDefault();
+
+        try {
+            form.validateFields();
+
+            const newTransaction = form.formatValues();
+            transaction.add(newTransaction);
+            
+            form.clearFields();
+            modal.close();
+        } catch (error) {
+            alert(error.message);
+        }
+    }
+};
