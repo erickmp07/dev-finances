@@ -81,7 +81,7 @@ const DOM = {
             ? "income"
             : "expense";
 
-        const value = Utils.formatCurrency(transaction.value);
+        const value = utils.formatCurrency(transaction.value);
 
         const html = `
         <td class="description">${transaction.description}</td>
@@ -97,18 +97,49 @@ const DOM = {
     updateBalance() {
         document
             .getElementById('income-display')
-            .innerHTML = Utils.formatCurrency(transaction.incomes());
+            .innerHTML = utils.formatCurrency(transaction.incomes());
         
         document
             .getElementById('expense-display')
-            .innerHTML = Utils.formatCurrency(transaction.expenses());
+            .innerHTML = utils.formatCurrency(transaction.expenses());
 
         document
             .getElementById('total-display')
-            .innerHTML = Utils.formatCurrency(transaction.total());
+            .innerHTML = utils.formatCurrency(transaction.total());
     },
 
     clearTransaction() {
         DOM.transactionsContainer.innerHTML = "";
+    }
+};
+
+const utils = {
+    formatValue(value) {
+        value = Number(value.replace(/\,\./g, "")) * 100;
+
+        return value;
+    },
+
+    formatDate(date) {
+        const splittedDate = date.split("-");
+
+        return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
+    },
+
+    formatCurrency(value) {
+        const signal = Number(value) < 0
+            ? "-"
+            : "";
+        
+        value = String(value).replace(/\D/g, "");
+
+        value = Number(value) / 100;
+
+        value = value.toLocaleString("en", {
+            style: "currency",
+            currency: "USD"
+        });
+
+        return signal + value;
     }
 };
