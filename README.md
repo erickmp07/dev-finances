@@ -26,7 +26,7 @@ Front-end development from a finance website.
 ```bash
 git clone https://github.com/erickmp07/dev-finances.git
 ```
-- Open the `index.html` file.
+- Open the [`index.html`](index.html) file with a browser.
 
 ## License
 
