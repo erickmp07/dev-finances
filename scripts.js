@@ -64,3 +64,51 @@ const transaction = {
         return transaction.incomes() + transaction.expenses();
     }
 };
+
+const DOM = {
+    transactionsContainer: document.querySelector('#data-table tbody'),
+
+    addTransaction(transaction, index) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction, index);
+        tr.dataset.index = index;
+
+        DOM.transactionsContainer.appendChild(tr);
+    },
+
+    innerHTMLTransaction(transaction, index) {
+        const CSSclass = transaction.value > 0
+            ? "income"
+            : "expense";
+
+        const value = Utils.formatCurrency(transaction.value);
+
+        const html = `
+        <td class="description">${transaction.description}</td>
+        <td class="${CSSclass}">${value}</td>
+        <td class="date">${transaction.date}</td>
+        <td>
+            <img onclick="transaction.remove(${index})" src="./assets/minus.svg" alt="Remove transaction">
+        </td>`;
+
+        return html;
+    },
+
+    updateBalance() {
+        document
+            .getElementById('income-display')
+            .innerHTML = Utils.formatCurrency(transaction.incomes());
+        
+        document
+            .getElementById('expense-display')
+            .innerHTML = Utils.formatCurrency(transaction.expenses());
+
+        document
+            .getElementById('total-display')
+            .innerHTML = Utils.formatCurrency(transaction.total());
+    },
+
+    clearTransaction() {
+        DOM.transactionsContainer.innerHTML = "";
+    }
+};
