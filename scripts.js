@@ -29,13 +29,13 @@ const transaction = {
     add(transaction) {
         transaction.all.push(transaction);
 
-        App.reload();
+        app.reload();
     },
 
     remove(index) {
         transaction.all.splice(index, 1);
 
-        App.reload();
+        app.reload();
     },
 
     incomes() {
@@ -201,5 +201,20 @@ const form = {
         } catch (error) {
             alert(error.message);
         }
+    }
+};
+
+const app = {
+    init() {
+        transaction.all.forEach(DOM.addTransaction);
+
+        DOM.updateBalance();
+
+        storage.set(transaction.all);
+    },
+
+    reload() {
+        DOM.clearTransaction();
+        app.init();
     }
 };
