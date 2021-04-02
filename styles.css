@@ -104,12 +104,12 @@ header {
 }
 
 #balance h2 {
-    color: #fff;
+    color: white;
     margin-top: 0;
 }
 
 .card {
-    background: #fff;
+    background: white;
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
     margin-bottom: 2rem;
@@ -133,7 +133,7 @@ header {
 
 .card.total {
     background: var(--green);
-    color: #fff;
+    color: white;
 }
 
 #transactions {
