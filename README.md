@@ -1,6 +1,7 @@
 <h1 align="center">dev.finance$</h1>
 
 <p align="center">
+    <a href="#technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#project">Project</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#how-to-run">How to run</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#license">License</a>
@@ -15,6 +16,14 @@
 <p align="center">
     <img alt="dev.finance$ main page" src="public/dev-finances.png">
 </p>
+
+## Technologies
+
+This project was developed with the following technologies:
+
+- HTML
+- CSS
+- JavaScript
 
 ## Project
 
