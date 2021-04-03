@@ -18,7 +18,7 @@
 
 ## Project
 
-Front-end development from a finance website.
+Front-end development from a finance website where you can manage your incomes and expenses adding or deleting transactions.
 
 ## How to run
 
