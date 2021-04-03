@@ -39,4 +39,4 @@ git clone https://github.com/erickmp07/dev-finances.git
 
 ## License
 
-Licensed under [MIT](LICENSE.md) license.
+Licensed under [MIT](LICENSE) license.
