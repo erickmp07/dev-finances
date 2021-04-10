@@ -163,7 +163,7 @@ const form = {
         if (description.trim() === "" || 
             value.trim() === "" || 
             date.trim() === "") {
-            throw new Error("Please, fill all the fields.");
+            throw new Error("Please, fill in all the fields.");
         }
     },
 
