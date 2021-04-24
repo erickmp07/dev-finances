@@ -31,11 +31,37 @@ Front-end development from a finance website where you can manage your incomes a
 
 ## How to run
 
+### Locally
+
 - Clone the repository
 ```bash
 git clone https://github.com/erickmp07/dev-finances.git
 ```
 - Open the [`index.html`](index.html) file with a browser.
+
+<br>
+
+### Docker container
+
+Prerequisites:
+
+Download and install [Docker](https://www.docker.com/products/docker-desktop).
+
+<br>
+
+- Pull the image with the command:
+```bash
+docker pull erickmp07/dev-finances:latest
+```
+
+- Run the image with the command:
+```bash
+docker run -p 8080:80 -d erickmp07/dev-finances
+```
+
+<br>
+
+The application can be accessed at [`localhost:8080`](http://localhost:8080).
 
 ## License
 
